@@ -16,5 +16,15 @@ describe('Contact component', () => {
         const { asFragment } = render(<Contact />);
         // assert value comparison
       expect(asFragment()).toMatchSnapshot();
-    });    
-  })
+    });  
+})
+
+it('renders', () => {
+  const { getByTestId } = render(<Contact />)
+  expect(getByTestId('h1tag')).toHaveTextContent('Contact me')
+})
+
+it('renders', () => {
+  const { getByTestId } = render(<Contact />)
+  expect(getByTestId('button')).toHaveTextContent('Submit')
+})
